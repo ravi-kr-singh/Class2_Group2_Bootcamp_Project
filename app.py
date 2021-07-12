@@ -11,12 +11,46 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
 
-db_path = os.path.join(os.path.dirname(__file__), 'database.db')
-db_uri = 'sqlite:///{}'.format(db_path)
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
+
+
+
+db = SQLAlchemy(app)
+
+
+
+@app.cli.command('db_create')
+def db_create():
+    db.create_all()
+    print('Database Created')
+
+
+@app.cli.command('db_drop')
+def db_drop():
+    db.drop_all()
+    print('Database Dropped!')
+"""
+
+@app.cli.command('db_seed')
+def db_seed():
+
+
+    test_user1 = User(first_name='William',
+                     last_name='Herschel',
+                     email='test@test.com',
+                     password='P@sswo0rd')
+    
+    db.session.add(test_user1)
+    db.session.commit()
+    print('Database Seeded!')
+
+"""
+
+
 
 bootstrap = Bootstrap(app)
-db = SQLAlchemy(app)
+
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'login'
