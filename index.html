@@ -17,13 +17,14 @@
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Create Account</h1>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <input type="number" placeholder="VISA Card Number" />
-                <input type="number" placeholder="Your Monthly Budget in INR" />
-                <button>Sign Up</button>
-
+                <input id='name_' type="text" placeholder="Name" />
+                <inputid id='email_'  type="email" placeholder="Email" />
+                <input id='password_' type="password" placeholder="Password" />
+                <input id='card_num_' type="number" placeholder="VISA Card Number" />
+                <input id='budget_' type="number" placeholder="Your Monthly Budget in INR" />
+                <button  onclick="register()" >Sign Up</button>
+                <div id="spinner"></div>
+                <p id ="error-output" class="error" ></p>
             </form>
         </div>
 
@@ -35,7 +36,7 @@
                 <input id="email" type="email" placeholder="Email" name="email" />
                 <input id="password" type="password" placeholder="Password" name="password"  />
                
-                <button  onclick="begin()" type="button" value="Login">Sign In</button>
+                <button  onclick="login()" type="button" value="Login">Sign In</button>
                 <div id="spinner"></div>
                 <p id ="error-output" class="error" ></p>
                

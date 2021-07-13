@@ -257,7 +257,7 @@ def register():
     if test:
         return jsonify(message='Email already registered!'), 409
     else:
-        first_name = request.form['first_name']
+        name = request.form['name']
         last_name = request.form['last_name']
         password = request.form['password']
         user = User(first_name=first_name, last_name=last_name, password=password, email=email)
