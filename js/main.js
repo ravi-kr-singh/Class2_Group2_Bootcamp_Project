@@ -32,7 +32,7 @@ function begin() {
     showSpinner();
 
     var data = {};
-    data.username = $('#username').val();
+    data.email = $('#email').val();
     data.password = $('#password').val()
 
     $.ajax({
