@@ -6,6 +6,7 @@ import os
 from sqlalchemy import Table, ForeignKey
 from sqlalchemy.orm import relationship
 from flask_marshmallow import Marshmallow
+from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
 from sqlalchemy.orm import backref
 
@@ -13,6 +14,9 @@ from sqlalchemy.orm import backref
 
 
 app = Flask(__name__) # Name of app should be same as that of project name
+
+CORS(app, resources={r"/*":{"origins":"*"}})
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
 app.config['JWT_SECRET_KEY'] = 'super secret' #change this in real life (it should be some uid or secret string)
