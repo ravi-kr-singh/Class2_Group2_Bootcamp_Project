@@ -49,13 +49,14 @@ def db_seed():
                      address='25, ABC STREET,iNDIA')
     
     db.session.add(test_user1)
+    db.session.add(test_user2)
     db.session.commit()
     print('Database Seeded!')
 
 
 @app.route('/')  # Root endpoint/url returning hello world .
 def hello_world():
-    return 'Hello World!'
+    return 'Index!'
 
 
 
@@ -110,7 +111,7 @@ class Userschema(ma.Schema):
         fields=('card_number', 'first_name', 'last_name', 'email', 'password', 'address')
 
 class Merchant(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'merchants'
     merchant_id = Column(Integer,primary_key=True)
     name = Column(String)
     merchant_type = Column(String)
@@ -122,7 +123,7 @@ class Merchantschema(ma.Schema):
         fields=('merchant_id', 'name', 'merchant_type', 'address')
 
 class Ngo(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'ngos'
     ngo_id = Column(Integer,primary_key=True)
     name = Column(String)
     work_type = Column(String)
