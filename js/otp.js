@@ -33,3 +33,7 @@ function otp(e) {
   document.querySelector("button").addEventListener("click", (e) => {
     e.target.classList.add("animate");
   })
+
+  function openloginpage() {
+    window.location.href = 'index.html'; 
+  }

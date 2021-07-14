@@ -12,6 +12,7 @@ signInButton.addEventListener('click', () => {
 });
 
 const spinner = document.getElementById("spinner");
+const spinner2 = document.getElementById("spinner2");
 
 function showSpinner() {
     spinner.style ="display:block;"
@@ -22,7 +23,15 @@ function hideSpinner() {
     spinner.style ="display:none;"
    
 }
+function showSpinner2() {
+    spinner2.style ="display:block;"
+  
+}
 
+function hideSpinner2() {
+    spinner2.style ="display:none;"
+   
+}
 var JWT_Token ;
 
 
@@ -71,17 +80,20 @@ function login() {
   
 
 }
+id_count = 104;
 
-
-function signup() {
-    showSpinner();
+function register() {
+    
+    showSpinner2();
 
     var data = {};
     data.name = $('#name_').val()
     data.email = $('#email_').val()
     data.password = $('#password_').val()
-    data.card_num_ = $('#card_num_').val()
+    data.user_id = id_count
+    id_count = id_count + 1
     data.budget = $('#budget_').val()
+    data.address = $('#address_').val()
 
     $.ajax({
         type: "POST",
@@ -93,24 +105,24 @@ function signup() {
         
         success: (data) => { 
             // console.log(`JWT TOken : ${data}`)
-            hideSpinner();
-
-
-
+            hideSpinner2();
             window.location.href = 'otp.html';
-           
             console.log(data.message)
             
           
         },
         error: function(xhr, status, error) {
-            hideSpinner();
+            hideSpinner2();
             console.log(`ERROR`)
-            document.getElementById('error-output').style ="display:block;margin:auto!important;margin: 15px 0!important;";
-            document.getElementById('error-output').textContent = `Error!`;
+            document.getElementById('error-output2').style ="display:block;margin:auto!important;margin: 15px 0!important;";
+            document.getElementById('error-output2').textContent = `Error!`;
         }
     });
     
   
 
+}
+
+function register2() {
+    window.location.href = 'otp.html';
 }
