@@ -42,3 +42,13 @@ $(document).ready(function(){
       
     });
   });
+
+  
+function openPayment() {
+    window.location.href = 'payment.html';
+}
+
+function callmerchantsearchAPI(){
+    document.getElementById('merchantsection').style ="display:block!important;";
+    document.getElementById('merchantbutton').style ="height:80px!important;";
+}
