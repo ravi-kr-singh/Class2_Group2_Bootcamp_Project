@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction History</title>
+  <link rel='stylesheet' href='css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/trans_history.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+    <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+
+          
+        <ul class="nav navbar-nav">
+          <li><a href="/transaction-history">Transaction history</a></li>
+          
+        </ul>
+       
+          
+
+
+      </div>
+    </div>
+  </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container transaction-history">
+
+    
+    
+    <div class="panel">
+        <div class="panel-heading">
+            Transactions
+        </div>
+   
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date and Time</th>
+            <th>Paid to</th>
+            <th>Currency</th>
+            <th class="rightAlign">Amount</th>
+            <th>Transaction ID</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+        <tr class="transaction-row collapsed" data-toggle="collapse" data-target="#ILxO6vN-hidden">
+            <td>14/07/21 19:02:20 PM</td>
+            <td class="transaction-details">ABC Foot Emporium</td>
+            <td class="uppercase">INR</td>
+            <td class="rightAlign"><span><i class="fa fa-minus red"></i> 334.23</span></td>
+            <td>?ILxO6vN</td>
+            <td>SUCCESSFUL</td>
+        </tr>
+        
+
+        <tr class="transaction-row collapsed" data-toggle="collapse" data-target="#rIf8Xrt-hidden">
+            <td>14/07/21 19:03:34 PM</td>
+            <td class="transaction-details">Manish Book store</td>
+            <td class="uppercase">INR</td>
+            <td class="rightAlign"><span><i class="fa fa-minus red"></i> 1000</span></td>
+            <td>?rIf8Xrt</td>
+            <td>SUCCESSFUL</td>
+        </tr>
+   
+
+        <tr class="transaction-row collapsed" data-toggle="collapse" data-target="#5hbSphb-hidden">
+            <td>14/07/21 19:04:23 PM</td>
+            <td class="transaction-details">RANDOM RATION STORE</td>
+            <td class="uppercase">INR</td>
+            <td class="rightAlign"><span><i class="fa fa-minus red"></i> 587</span></td>
+            <td>?5hbSphb</td>
+            <td>SUCCESSFUL</td>
+        </tr>
+
+
+        <tr class="transaction-row collapsed" data-toggle="collapse" data-target="#Utyrieg-hidden">
+            <td>14/07/21 19:05:57 PM</td>
+            <td class="transaction-details">Mc Donalds</td>
+            <td class="uppercase">INR</td>
+            <td class="rightAlign"><span><i class="fa fa-minus red"></i> 789.99</span></td>
+            <td>?Utyrieg</td>
+            <td>SUCCESSFUL</td>
+        </tr>
+        
+
+        <tr class="transaction-row collapsed" data-toggle="collapse" data-target="#zO8vqql-hidden">
+            <td>14/07/21 19:06:48 PM</td>
+            <td class="transaction-details">ABC FOOT EMPORIUM</td>
+            <td class="uppercase">INR</td>
+            <td class="rightAlign"><span><i class="fa fa-minus red"></i> 68.23</span></td>
+            <td>?zO8vqql</td>
+            <td>SUCCESSFUL</td>
+        </tr>
+
+        
+
+        <tr class="transaction-row collapsed" data-toggle="collapse" data-target="#CmHCeLV-hidden">
+            <td> 14/07/21 19:08:20 PM </td>
+            <td class="transaction-details">Manish Book Store</td>
+            <td class="uppercase">INR</td>
+            <td class="rightAlign"><span><i class="fa fa-plus green"></i> 568.23</span></td>
+            <td>?CmHCeLV</td>
+            <td>SUCCESSFUL</td>
+        </tr>
+
+
+
+        <tr class="transaction-row collapsed" data-toggle="collapse" data-target="#Ly4XO6r-hidden">
+            <td> 14/07/21 19:09:18 PM </td>
+            <td class="transaction-details">MOTHER DAIRY</td>
+            <td class="uppercase">INR</td>
+            <td class="rightAlign"><span><i class="fa fa-minus red"></i> 83</span></td>
+            <td>?Ly4XO6r</td>
+            <td>SUCCESSFUL</td>
+        </tr>        
+
+       
+
+    </tbody>
+    
+  </table>
+  </div>
+  <div class="modal fade" tabindex="-1" role="dialog" id="transaction-history-modal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  <h4 class="modal-title">Transaction Status Trace</h4>
+              </div>
+              <div class="modal-body">
+
+
+                              <table class="table table-striped">
+                                  <thead>
+                                  <tr>
+                                      <th>
+                                          Status
+                                      </th>
+                                      <th>
+                                          By
+                                      </th>
+                                      <th>
+                                          Date
+                                      </th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  
+                                  </tbody>
+                              </table>
+
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+</div>
+      </div>
+  </div>
+</body>
+                       
+<!-- partial -->
+  <script src='js/jquery.min.js'></script>
+<script src='js/bootstrap.min.js'></script>
+</body>
+</html>
