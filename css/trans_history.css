@@ -18,7 +18,7 @@
   
   .panel-heading {
     color: white;
-    background-color: #db0011;
+    background-color:#143f8c ;
   }
   
   .login-panel {
@@ -118,7 +118,7 @@
   }
   .new-customer-template .panel .panel-heading {
     color: white;
-    background-color: #db0011;
+    background-color:#143f8c ;
   }
   
   .clock {
@@ -144,7 +144,7 @@
   }
   
   .negative-sign {
-    color: #db0011;
+    color: #143f8c;
   }
   
   select {
@@ -162,7 +162,7 @@
   }
   
   .required {
-    color: #db0011;
+    color:#143f8c;
   }
   
   div.jumbotron {
@@ -191,7 +191,7 @@
     margin: 20px;
   }
   div.panel-hsbc .panel-heading {
-    background-color: #db0011;
+    background-color:#143f8c ;
     color: white;
   }
   
