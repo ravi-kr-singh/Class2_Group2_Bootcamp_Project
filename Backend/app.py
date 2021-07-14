@@ -9,6 +9,7 @@ from flask_marshmallow import Marshmallow
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token
 from sqlalchemy.orm import backref
+from sqlalchemy.orm.attributes import flag_modified
 
 
 
@@ -307,6 +308,30 @@ def merchant_search():
     merchants_list = Merchant.query.all()
     result = merchants_schema.dump(merchants_list)
     return jsonify(result)
+
+@app.route('/push_fund_transaction',methods=['POST'])
+def push_fund_transaction():
+    return "dfafd873";
+
+def update_nobility_score(reward_point_gained,user_name):
+    user = User.query().filter(User.name==user_name)
+    data = user.data
+    data["nobility_score"] = data["nobility_score"] + reward_point_gained
+    user.data = data
+    flag_modified(user, "data")
+    db.session.merge(user)
+    db.session.flush()
+    db.session.commit()
+
+"""
+@app.route('/view_nobility_score',methods=['GET'])
+def view_nobility_score():
+    user_name = request.json['user_name']
+    user_list = Merchant.query.all()
+    result = merchant_schema.dump(merchant_list)
+    return jsonify(result)
+
+"""
 
 #database models
 class User(db.Model):
