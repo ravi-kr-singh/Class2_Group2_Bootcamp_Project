@@ -15,7 +15,7 @@ from sqlalchemy.orm import backref
 
 app = Flask(__name__) # Name of app should be same as that of project name
 
-CORS(app, resources={r"/*":{"origins":"*"}})
+CORS(app)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database.db')
@@ -42,7 +42,7 @@ def db_drop():
 @app.cli.command('db_seed')
 def db_seed():
 
-    dummy_user1 = User(card_token= 'kjadfji384709vihkjfoic9877',
+    dummy_user1 = User(user_id= '101',
                      budget=10000,
                      nobility_score=22,
                      name='Test User1',
@@ -50,7 +50,7 @@ def db_seed():
                      password='password',
                      address='56, xYZ STREET, Delhi, India')
 
-    dummy_user2 = User(card_token= 'f978739478kdfjjkdhlck9e87r',
+    dummy_user2 = User(user_id= '102',
                      budget=4000,
                      nobility_score=0,
                      name='Test User2',
@@ -137,69 +137,69 @@ def db_seed():
     dummy_transaction1 = Transaction(transaction_id=837409758497875,
                                     transaction_amount=2000,
                                     merchant_id=101,
-                                    card_token='kjadfji384709vihkjfoic9877')    
+                                    user_id=101)    
 
     dummy_transaction2 = Transaction(transaction_id=557409758497875,
                                     transaction_amount=178,
                                     merchant_id=512,
-                                    card_token='kjadfji384709vihkjfoic9877')  
+                                    user_id=101)  
 
     dummy_transaction3 = Transaction(transaction_id=787409758497865,
                                     transaction_amount=173,
                                     merchant_id=652,
-                                    card_token='kjadfji384709vihkjfoic9877')  
+                                    user_id=101)  
 
     dummy_transaction4 = Transaction(transaction_id=712409758497875,
                                     transaction_amount=567,
                                     merchant_id=489,
-                                    card_token='kjadfji384709vihkjfoic9877')  
+                                    user_id=101)  
 
     dummy_transaction5 = Transaction(transaction_id=264409758497875,
                                     transaction_amount=999,
                                     merchant_id=101,
-                                    card_token='kjadfji384709vihkjfoic9877')  
+                                    user_id=101)  
 
     dummy_transaction6 = Transaction(transaction_id=56409758497875,
                                     transaction_amount=782,
                                     merchant_id=101,
-                                    card_token='kjadfji384709vihkjfoic9877')     
+                                    user_id=101)     
 
     dummy_transaction7 = Transaction(transaction_id=432109758497875,
                                     transaction_amount=200,
                                     merchant_id=652,
-                                    card_token='kjadfji384709vihkjfoic9877')  
+                                    user_id=101)  
 
     dummy_transaction8 = Transaction(transaction_id=118409758497875,
                                     transaction_amount=500,
                                     merchant_id=512,
-                                    card_token='kjadfji384709vihkjfoic9877')  
+                                    user_id=101)  
 
     dummy_transaction9 = Transaction(transaction_id=654321758497875,
                                     transaction_amount=89,
                                     merchant_id=732,
-                                    card_token='kjadfji384709vihkjfoic9877')  
+                                    user_id=101)  
 
     dummy_transaction10 = Transaction(transaction_id=123409758497875,
                                      transaction_amount=300,
                                      merchant_id=365,
-                                     card_token='kjadfji384709vihkjfoic9877')  
+                                     user_id=101)  
                          
     dummy_donation1 = Donation(donation_id=8713546,
                                donation_amount=12,
                                ngo_id=485,
-                               card_token='kjadfji384709vihkjfoic9877',
+                               user_id=101,
                                nobility_point_reward='5')  
     
     dummy_donation2 = Donation(donation_id=8713584,
                                donation_amount=20,
                                ngo_id=265,
-                               card_token='kjadfji384709vihkjfoic9877',
+                               user_id=101,
                                nobility_point_reward='8')  
     
     dummy_donation3 = Donation(donation_id=8713632,
                                donation_amount=30,
                                ngo_id=753,
-                               card_token='kjadfji384709vihkjfoic9877',
+                               user_id=101,
                                nobility_point_reward='9')  
 
     
@@ -248,7 +248,8 @@ def hello_world():
 
 
 
-
+def visa_token_service(card_number): #Mocking visa token service
+    return "837048nufgjks458jkgjf8i4njkkfljg87kjg256"
 
 @app.route('/register',methods=['POST'])
 def register():
@@ -258,13 +259,17 @@ def register():
         return jsonify(message='Email already registered!'), 409
     else:
         name = request.form['name']
-        last_name = request.form['last_name']
         password = request.form['password']
-        user = User(first_name=first_name, last_name=last_name, password=password, email=email)
+        budget = request.form['budget']
+        address = request.form['address']
+        user_id = request.form['user_id'] 
+
+        user = User(user_id=user_id, budget=budget,nobility_score=0,name=name,email=email,password=password,address=address)
         db.session.add(user)
         db.session.commit()
         return jsonify(message='Registration successful'), 201
 
+fields=('user_id','budget','nobility_score' 'name', 'email', 'password', 'address')
 
 @app.route('/login',methods=['POST'])
 def login():
@@ -286,7 +291,7 @@ def login():
 #database models
 class User(db.Model):
     __tablename__ = 'users'
-    card_token = Column(String,primary_key=True)
+    user_id = Column(Integer,primary_key=True)
     budget = Column(Integer)
     nobility_score = Column(Integer)
     name = Column(String)
@@ -297,7 +302,7 @@ class User(db.Model):
 
 class Userschema(ma.Schema):
     class Meta:
-        fields=('card_token','budget','nobility_score' 'name', 'email', 'password', 'address')
+        fields=('user_id','budget','nobility_score' 'name', 'email', 'password', 'address')
 
 class Merchant(db.Model):
     __tablename__ = 'merchants'
@@ -331,13 +336,13 @@ class Transaction(db.Model):
     transaction_amount = Column(Integer)
     merchant_id = Column(Integer,ForeignKey('merchants.merchant_id'))
     merchants = relationship("Merchant", backref=backref("transactions", uselist=False))
-    card_token = Column(String,ForeignKey('users.card_token'))
+    user_id = Column(Integer,ForeignKey('users.user_id'))
     users = relationship("User", backref=backref("transactions", uselist=False))
 
 
 class Transactionschema(ma.Schema):
     class Meta:
-        fields=('transaction_id', 'transaction_amount', 'merchant_id', 'card_token')
+        fields=('transaction_id', 'transaction_amount', 'merchant_id', 'user_id')
 
 class Donation(db.Model):
     __tablename__ = 'donations'
@@ -345,14 +350,14 @@ class Donation(db.Model):
     donation_amount = Column(Integer)
     ngo_id = Column(Integer,ForeignKey('ngos.ngo_id'))
     ngos = relationship("Ngo", backref=backref("donations", uselist=False))
-    card_token = Column(String,ForeignKey('users.card_token'))
+    user_id = Column(Integer,ForeignKey('users.user_id'))
     users = relationship("User", backref=backref("donations", uselist=False))
     nobility_point_reward = Column(Integer)
 
 
 class Donationschema(ma.Schema):
     class Meta:
-        fields=('donation_id', 'donation_amount', 'ngo_id', 'card_token','nobility_point_reward')
+        fields=('donation_id', 'donation_amount', 'ngo_id', 'user_id','nobility_point_reward')
 
 
 user_schema = Userschema()
