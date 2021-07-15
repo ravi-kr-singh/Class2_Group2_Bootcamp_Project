@@ -35,9 +35,11 @@ function hideSpinner2() {
 var JWT_Token ;
 
 
-
-
 function login() {
+    window.location.href = 'htmlfiles/home.html';
+}
+
+function login2() {
     showSpinner();
 
     var data = {};
