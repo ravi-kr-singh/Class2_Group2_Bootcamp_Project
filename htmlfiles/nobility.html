@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+<title>Donations-Nobility score</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../styles/navbar.css"/>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+
+div.c1 {
+background-color: lightblue;
+background-position-x: center;
+text-align: center;
+background-position-y: center;
+width: 400px;
+margin: auto;
+margin-top: 80px;
+padding: 10px;
+box-shadow: 5px 10px 8px #888888;
+position: center;
+}
+div.c1 img {
+size: 80px;
+position: center;
+}
+div.score{
+background-position-x: center;
+background-color: teal;
+padding: 5%;
+border-radius: 10px;
+border-color: #a0e6eb;
+border-style: solid;
+}
+div.c1 b{
+padding:5px;
+font-size: 120%;
+
+}
+div.info{
+padding:10px;
+font size: 100%;
+border-color: #a3a9ad;
+border-style: solid;
+padding: 5%;
+text-align: left;
+border-radius:5px;
+box-shadow: 5px 10px 8px #888888;
+margin:5%;
+
+}
+.tooltip .tooltiptext {
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+/* Position the tooltip */
+position: absolute;
+z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navi" style="border-bottom: 7px; border-color:#f0b715;border-bottom-style:solid;">  
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#" style="color: white; font-size: 180%;">Visa Budit</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../htmlfiles/home.html" style="color: #f0b715;">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #f0b715;">
+          Offers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Hotels</a>
+          <a class="dropdown-item" href="#" style="color:#f0b715">Restaurants</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Grocery</a>
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Dairy</a>
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Fashion</a>
+        </div>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link" href="../htmlfiles/budgety.html" style="color: #f0b715;">Your Budget<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="../htmlfiles/know_more.html" style="color:#f0b715;">Contact Us<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+  <a href="#" style="color:white; margin-right:3px;">USER 1</a>
+  <input type="image" src="https://i1.wp.com/shareicon.net/data/2017/02/15/878685_user_512x512.png" href="#" style="margin-right: 5px;" name="submit" width="40" height="40" alt="submit"/> 
+  <div id="goodness" onclick="location.href='#';">
+      Nobility Score : 85
+  </div>
+</nav>
+</div>
+
+<div class="c1">
+<div class="img">
+<img
+src="https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png"
+width="200"
+length="200"
+/>
+</div>
+<p>
+<b>USER 1</b>
+<br>
+<div class="score" style="background-color:#f0b715;">
+<b><font color="white">Nobility Score : 85</font></b>
+</div>
+<p>You have used 40% of your nobility points</p>
+<p><b><font color="#333332" style="padding: 5px; font-weight: bold; font-size: 20px;"> Donations by you- </font></b></p>
+<div class="info">
+<div style="background-color: #f0b715;padding: 5px;"><b>NGO || Amount donated</b></div>
+<div style="background-color: #94b5d1; padding: 5px;">1. Smile Foundation = 10</div>
+<div style="background-color: #c0d7eb;padding: 5px;">2. Give India Foundation = 10</div>
+<div style="background-color: #94b5d1;padding: 5px;">3.Nanhi Kali = 20</div>
+<div style="background-color: #c0d7eb;padding: 5px;">4. Goonj = 5</div>
+<div style="background-color: #94b5d1;padding: 5px;">5. Helpage India = 15</div>
+<div style="background-color: #c0d7eb;padding: 5px;">6. CRY (Child Rights and You) = 10</div>
+<div style="background-color: #94b5d1;padding: 5px;">7. Care India = 5</div>
+<div style="background-color: #c0d7eb;padding: 5px;">8. Childline India Foundation = 10</div>
+<div style="background-color: #94b5d1;padding: 5px;">9. Sammaan Foundation = 15</div>
+<div style="background-color: #c0d7eb;padding: 5px;">10. Pratham = 10</div>
+</div>
+</p>
+</div>
+</body>

@@ -1,70 +1,28 @@
-<html>
-  <head>
-    <title>Welcome</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-3.3.1.min.js"></script>  
-    <script src="js/axios.min.js"></script>
-
-   
-  </head>
-  <body>
-
-
-    <h2>Welcome!</h2>
-    
-    <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form >
-                <h1>Create Account</h1>
-                <input id='name_' type="text" placeholder="Name" />
-                <input id='email_'  type="email" placeholder="Email" />
-                <input id='password_' type="password" placeholder="Password" />
-                <input id='address_' type="text" placeholder="Address" />
-                <input id='budget_' type="number" placeholder="Your Monthly Budget in INR" />
-                <button  onclick="register2()"  type="button" value="Signup" >Sign Up</button>
-                <div id="spinner2"></div>
-                <p id ="error-output2" class="error2" ></p>
-            </form>
-        </div>
-
-        
-
-        <div class="form-container sign-in-container">
-            <form action="" method="post">
-                <h1>Sign in</h1>
-                <input id="email" type="email" placeholder="Email" name="email" />
-                <input id="password" type="password" placeholder="Password" name="password"  />
-               
-                <button  onclick="login()" type="button" value="Login">Sign In</button>
-                <div id="spinner"></div>
-                <p id ="error-output" class="error" ></p>
-               
-            </form>
-            
-        </div>
-        <div id="spinner"></div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Login with your ID</p>
-                    <button class="ghost" id="signIn">Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, User!</h1>
-                    <p>Not Signed up? Sign up here...</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-
-    <script src='js/main.js'></script>
-    
-
-  </body>
+<!DOCtype html>
+<head>
+<title>VISA BUDIT</title>
+<link rel="stylesheet" type="text/css" href="styles/Full_screen.css"/>
+</head>
+<style>
+</style>
+<body>
+<section class="intro">
+<div class="inner">
+<div class="content">
+<img src="https://images.unsplash.com/photo-1560472355-536de3962603?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmlzYSUyMGNhcmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";>
+<p>
+<h1>VISA BUDIT</h1>
+<h2>Tap to pay with Visa.
+Cashless Confidence.</h2>
+<a class="btn" href="sign_in_up.html" >Get Started</a>
+</p>
+</div>
+</div>
+</section>
+<div class="vi"><font color="#19244f">Visa Inc.</font></div>
+<div class="links">
+<div><font color="grey" type="courier new"> To know more about Visa Budit </font><a href="htmlfiles/know_more.html">click here</a></div>
+<div><font color="grey" type="courier new"> </font><a href="https://www.visa.co.in/about-visa.html">About Visa</a></div>
+</div>
+</body>
 </html>
-

@@ -62,7 +62,7 @@ function login() {
           
 
 
-            //window.location.href = 'home.html';
+            window.location.href = '/htmlfiles/home.html';
            
             console.log(data.message)
             console.log(data.access_token)

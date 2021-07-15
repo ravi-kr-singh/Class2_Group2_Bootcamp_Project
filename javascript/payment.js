@@ -82,9 +82,3 @@ new Vue({
       }
     }
   });
-
- 
-
-  function payment_status_page() {
-    window.location.href = 'payment_success.html';
-}

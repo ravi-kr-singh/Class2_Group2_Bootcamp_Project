@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../styles/budgetpage.css"/>
+        <title>Budgety</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../styles/navbar.css"/>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+
+    </head>
+    <body>
+        <div class="navi" style="border-bottom: 7px; border-color:#f0b715;border-bottom-style:solid;">  
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#" style="color: white; font-size: 180%;">Visa Budit</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../htmlfiles/home.html" style="color: #f0b715;">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #f0b715;">
+          Offers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Hotels</a>
+          <a class="dropdown-item" href="#" style="color:#f0b715">Restaurants</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Grocery</a>
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Dairy</a>
+          <a class="dropdown-item" href="#" style="color:#f0b715;">Fashion</a>
+        </div>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="color: #f0b715;">Your Budget<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="../htmlfiles/know_more.html" style="color:#f0b715;">Contact Us<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+  <a href="#" style="color:white; margin-right:3px;">USER 1</a>
+  <input type="image" src="https://i1.wp.com/shareicon.net/data/2017/02/15/878685_user_512x512.png" href="#" style="margin-right: 5px;" name="submit" width="40" height="40" alt="submit"/> 
+  <div id="goodness" onclick="location.href='../htmlfiles/nobility.html';">
+      Nobility Score : 85
+  </div>
+</nav>
+</div>
+
+        <div class="top">
+            <div class="budget">
+                <div class="budget__title">
+                     Budget Management of <span class="budget__title--month">%Month%</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+        <div class="bottom">
+            <div class="add">
+                <div class="add__container">
+                    <select class="add__type">
+                        
+                        <option value="exp" >Expense</option>
+                    </select>
+                    <input type="text" class="Transaction_id" placeholder="Transaction id">
+                    <input type="text" class="Transaction_item" placeholder="Transaction Description">
+                    <input type="number" class="Transaction_Amount" placeholder=" Transaction Amount">
+                    <input type="date" class="Transaction_Date" placeholder="Transaction Date">
+					
+                    <input type="submit" class="add__btn" type='button'>
+                </div>
+            </div>
+            
+            <div class="container clearfix">
+                
+                <div class="expenses">
+                    <h2 class="expenses__title">Transaction History</h2>
+                 
+                    
+                    <div class="expenses__list">
+                       
+                        <div class="item clearfix" id="expense-0">
+                            <div class="item__description">Apartment rent</div>
+                            <div class="right clearfix">
+                                <div class="item__value">- 900.00</div>
+                                <div class="item__percentage">21%</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item clearfix" id="expense-1">
+                            <div class="item__description">Grocery shopping</div>
+                            <div class="right clearfix">
+                                <div class="item__value">- 435.28</div>
+                                <div class="item__percentage">10%</div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <script src="../javascript/budgety.js"></script>
+    </body>
+</html>

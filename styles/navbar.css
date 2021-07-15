@@ -1,0 +1,76 @@
+    .navbar-light{
+        background-color: #1a1f71;
+        font-family: 'Lobster', cursive ;
+    }
+    .dropdown-menu{
+          background-color: #1a1f71;
+    }
+    .title{
+      font: 'courier new'; 
+      font-size: 50px ;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    #goodness{
+      float:right; 
+      background-color: #f0b715; 
+      color: black; 
+      width: 200px; 
+      text-align: center; 
+      padding: 3px; 
+      border-radius: 7px;"
+    }
+    #outerbox{
+     overflow:hidden;
+     height:300px;
+    }
+    #sliderbox{
+     position:relative;
+     width:2700px;
+     animation-name:slider;
+     animation-duration:15s;
+     animation-iteration-count:infinite;
+    }
+    #sliderbox1{
+     position:relative;
+     width:3000px;
+     animation-name:slider;
+     animation-duration:15s;
+     animation-iteration-count:infinite;
+    }
+    #sliderbox img{
+     float:left;
+     margin-left: 10px;
+    }
+
+    @keyframes slider
+   {
+      0%
+      {
+        left:0px;
+      }
+      26.7%
+      {
+        left:0px;
+      }
+      33.4%
+      { 
+        left:-900px;
+      }
+      60%
+      {
+        left:-900px;
+      }
+      67%
+      {
+        left:-1800px;
+      }
+      93.4%
+      {
+         left:-1800px;
+      }
+      100%
+      {
+         left:-2700px;
+      }
+    }

@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+
+html,
+body {
+margin: 0;
+padding: 0;
+height: 100%;
+width: 100%;
+}
+.intro {
+height: 100%;
+width: 100%;
+margin: auto;
+background-image: url("https://images.unsplash.com/photo-1556740720-776b84291f8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80");
+display: table;
+top: 0;
+background-size: cover;
+}
+
+.intro .inner {
+display: table-cell;
+vertical-align: middle;
+}
+
+.content {
+max-width: 500px;
+margin: 0 auto;
+text-align: center;
+padding: 50px;
+margin: 200px;
+background-color: white;
+opacity: 0.9;
+}
+
+.content h1 {
+font-family: Verdana;
+color: #222f75;
+text-shadow: 0px 0px 300px #000;
+font-size: 300%;
+margin: 5%;
+}
+
+.btn {
+border-radius: 9px;
+font-family: Verdana;
+color: #036a81;
+font-size: 135%;
+padding: 10px 20px;
+border: solid #036a81 3px;
+text-transform: uppercase;
+text-decoration: none;
+margin: 5%;
+}
+.links {
+padding-left: 5%;
+padding-bottom: 5%;
+}
+
+.btn:hover {
+color: grey;
+border: solid grey 3px;
+}
+.vi {
+font-size: 120%;
+padding-top: 5%;
+padding-left: 5%;
+}
+.p {
+font-size: 160%;
+line-height: 210%;
+text-align: justify;
+margin: 30px;
+font-family: Verdana;
+margin: 5%;
+color: #000000;
+}
+
+ul li {
+text-size: 160;
+}
+
+@media screen and (max-width: 768px) {
+.content h1 {
+font-size: 250%;
+}
+.btn {
+font-size: 110%;
+padding: 7px 15px;
+}
+p {
+font-size: 100%;
+line-height: 160%;
+}
+}
+
